@@ -40,7 +40,7 @@ endif
 
 include $(CLEAR_VARS)
 
-mm-audio-native-inc     := $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr/include
+#mm-audio-native-inc     := $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr/include
 ifeq ($(strip $(QC_PROP)),true)
 mm-audio-native-inc     += $(TARGET_OUT_HEADERS)/mm-audio/audio-alsa
 ifeq ($(call is-board-platform,msm8660),true)
@@ -56,7 +56,7 @@ LOCAL_CFLAGS            := $(mm-audio-native-def)
 LOCAL_PRELINK_MODULE    := false
 
 LOCAL_C_INCLUDES        := $(mm-audio-native-inc)
-LOCAL_ADDITIONAL_DEPENDENCIES := $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr
+#LOCAL_ADDITIONAL_DEPENDENCIES := $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr
 ifeq ($(strip $(QC_PROP)),true)
 LOCAL_SHARED_LIBRARIES  := libaudioalsa
 ifeq ($(call is-board-platform,msm8660),true)
